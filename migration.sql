@@ -4,8 +4,8 @@ CREATE DATABASE reviewerdb;
 \c reviewerdb
 
 DROP TABLE IF EXISTS reviews CASCADE;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS albums;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS albums CASCADE;
 
 CREATE TABLE users (
   id serial PRIMARY KEY,
@@ -24,9 +24,11 @@ CREATE TABLE albums (
 
 CREATE TABLE reviews (
   id serial PRIMARY KEY,
-  album_id integer NOT NULL references albums(id),
-  user_id integer NOT NULL references users(id),
+  album_id integer NOT NULL,
+  user_id integer NOT NULL,
   review text,
   rating integer,
-  submit_time timestamp with time zone
+  submit_time timestamp with time zone,
+  FOREIGN KEY (user_id) references users(id) ON DELETE CASCADE,
+  FOREIGN KEY (album_id) references albums(id) ON DELETE CASCADE
 );

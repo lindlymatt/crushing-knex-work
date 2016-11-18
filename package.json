@@ -9,6 +9,7 @@
   "author": "abml",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.14.0",
     "knex": "^0.12.6",
     "pg": "^6.1.0"
   }

@@ -53,7 +53,3 @@ INSERT INTO reviews (album_id, user_id, review, rating, submit_time)
 VALUES (3, 3, 'Kanye is the GOAT', 10, CURRENT_TIMESTAMP);
 
 INSERT INTO reviews (album_id, user_id, review, rating, submit_time)VALUES (3, 4, 'I love this album!', 7, CURRENT_TIMESTAMP);
-
-SELECT * FROM users;
-SELECT * FROM albums;
-SELECT * FROM reviews;
