@@ -13,14 +13,11 @@ app.get('/api/albums/:name', (req, res) => {
   knex('albums')
   .where('albums.name', album)
   .then(data => {
-    // console.log(data);
+    res.set('Access-Control-Allow-Origin', '*');
     res.send(data);
-    knex.destroy();
-    // process.exit(1);
   })
   .catch(err => {
     console.log(err);
-    process.exit(1);
   });
 });
 
